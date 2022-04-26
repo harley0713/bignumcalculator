@@ -5,35 +5,34 @@
 using namespace std;
 
 
-class bigInt{
+class BigInt{
 public:
+	vector<long long int> Int;
+	int flag;
 
-	vector<int> Int;
-	int flag = 1;
+	BigInt();
+	BigInt(string);
 
-	bigInt();
-	bigInt(string);
+	BigInt& operator=(BigInt Int2);
+	BigInt operator+(BigInt Int2);
+	BigInt operator-(BigInt Int2);
+	BigInt operator*(BigInt Int2);
+	BigInt operator/(BigInt Int2);
+	BigInt operator%(BigInt Int2);
+	BigInt operator-();
 
-
-	bigInt operator+(bigInt Int2);
-	bigInt operator-(bigInt Int2);
-	bigInt operator*(bigInt Int2);
-	bigInt operator/(bigInt Int2);
-	bigInt operator%(bigInt Int2);
-	bigInt operator-();
-
-	bool operator>(bigInt compareInt);
-	bool operator<(bigInt compareInt);
-	bool operator>=(bigInt compareInt);
-	bool operator<=(bigInt compareInt);
-	bool operator==(bigInt compareInt);
-	bool operator!=(bigInt compareInt);
+	bool operator>(BigInt compareInt);
+	bool operator<(BigInt compareInt);
+	bool operator>=(BigInt compareInt);
+	bool operator<=(BigInt compareInt);
+	bool operator==(BigInt compareInt);
+	bool operator!=(BigInt compareInt);
 	
-	bigInt& fixInt();
+	BigInt& fixInt();
 
-	friend istream& operator>>(istream&, bigInt&);
-	friend ostream& operator<<(ostream&, bigInt);
+	friend istream& operator>>(istream&, BigInt&);
+	friend ostream& operator<<(ostream&, BigInt);
 
-	static bigInt factorial(bigInt num);
-	static bigInt power(bigInt base, bigInt expotent);
+	static BigInt factorial(BigInt num);
+	static BigInt power(BigInt base, BigInt expotent);
 };
